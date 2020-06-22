@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	
+	<script src="./Dep.js"></script>
+	<script src="./Compile.js"></script>
+	<script src="./Observe.js"></script>
+	<script src="./Watcher.js"></script>
+	<script src="./computedWatcher.js"></script>
+	<script src="./index.js"></script>
+
+	<div id="app">
+		<div class="vue-show">{{name}}</div>
+		<input v-model="value" />
+		<div class="vue-show">{{value}}</div>
+		<div>{{nameComputed}}</div>
+	</div>
+
+	<script type="text/javascript">
+		window.onload = function () {
+			let vm = new Vue({
+				el: '#app',
+				data () {
+					return {
+						name: '321',
+						value: '这是vm'
+					}
+				},
+				computed: {
+					nameComputed () {
+						return this.value + 'computed'
+					}
+				},
+				watch: {
+					value (newVal, oldValue) {
+					}
+				},
+				methods: {
+					setValue(value) {
+						console.log(value);
+					}
+				}
+			})
+			console.log(vm);
+		}
+	</script>
+
+	
+</body>
+</html>
