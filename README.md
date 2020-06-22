@@ -1,0 +1,2 @@
+# vue_watch_computed
+原生js实现vue双向绑定和watch属性和computed属性
